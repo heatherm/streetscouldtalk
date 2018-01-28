@@ -1,8 +1,6 @@
-![alt tag](https://github.com/craiglyons/razor/blob/master/static/logo_tmp.jpg)
+## StreetsCouldTalk Prototype
 
-## Phoenix Prototype app
-
-A Carbon Five-flavored convenience skeleton project for Phoenix.
+Built from Carbon Five-flavored convenience skeleton project for Phoenix.
 
 * [Phoenix](https://hex.pm/packages/phoenix)
 * [Postgrex](https://hex.pm/packages/postgrex)
@@ -17,56 +15,14 @@ A Carbon Five-flavored convenience skeleton project for Phoenix.
 * .iex.exs for REPL aliases & imports
 * ready for deployment to Heroku Pipelines in `acceptance` and `prod` environments.
 
-## Automatic installation
-
-It's strongly recommended you don't clone this repo, and instead [zap your project using Razor](https://github.com/carbonfive/razor).
-The zapper will handle all of the following steps programmatically.
-
-## Manual installation
-
-If you can't use [Razor](https://github.com/carbonfive/razor) to install for some reason, you can start by cloning this repo.
-Next, you'll perform global replacements for these with your app name:
-
-* `StreetsCouldTalk`
-* `streets_could_talk`
-* `streetscouldtalk`
-* `Streets Could Talk`
-
-Also rename the following directories & files:
-
-* `/lib/streets_could_talk`
-* `/web/static/css/_streets_could_talk.scss`
-* `/web/static/js/streets_could_talk.js`
-
-Now you can finish your setup & verify things are working:
+#### Give it a spin:
 
 * `mix deps.get`
 * `mix ecto.setup`
 * `cd assets && yarn install`
 * `cd assets && brunch build`
 * `mix test`
-
-## Running the server
-
-Each environment is responsible for setting the `SECRET_KEY_BASE`. With the exception of the `test` environment, this value is derived from a system environment variable.
-
-To set environment variables locally for the `dev` environment, you can create a `.env` file & run the server with a tool that reads `.env`. I recommend `heroku local` to mirror production more closely, or foreman.
-
-#### Sample `.env` file
-
-```
-MIX_ENV=dev
-SECRET_KEY_BASE="xxxxxx"
-```
-
-`SECRET_KEY_BASE` can be generated with the task `mix phx.gen.secret`.
-
-As a convenience, a weak `SECRET_KEY_BASE` is hard-coded in the `test` environment. You can easily change this to read an env var a la the other environments instead.
-
-#### Give it a spin:
-
-* Run with something that works with `.env` files, i.e. `foreman` or `heroku local`
-* OR `source .env` and `mix phx.server`
+* Run with `heroku local`
 * visit the app in a browser (default is `http://localhost:4000`, or `http://127.0.0.1:4000` in some versions of Chrome)
 
 Now you're ready to remove demo content, which is easy to spot from the landing page.
@@ -99,18 +55,3 @@ Convention is to auto-deploy `master` branch to `acceptance`, and `production` b
   * `DATABASE_URL` should have been filled automatically by provisioning heroku postgres.
 * Migrations are run automatically using Heroku's [release phase](https://devcenter.heroku.com/articles/release-phase).
 * Configure Elixir, Erlang and Node versions via the `elixir_buildpack.config` and `phoenix_static_buildpack.config` files. See the corresponding buildpack project pages for more configuration variables.
-
-## Notes
-
-* You will see warnings from several dependencies the first time they're compiled.
-  This is because many of them have not yet been upgraded for elixir 1.4; these can be safely ignored.
-* There's a decent chance you'll eventually want a production environment with more control & power. Heroku is currently the simplest way to get up & running for prototyping, and may even suit your app just fine long term.
-* Razor should be used for convenience, not to avoid learning more about Phoenix and Elixir. Please take the time to learn about the opinions provided by Razor & how they are implemented.
-
-## Learn more about Phoenix
-
-* Official website: http://www.phoenixframework.org/
-* Guides: http://phoenixframework.org/docs/overview
-* Docs: https://hexdocs.pm/phoenix
-* Mailing list: http://groups.google.com/group/phoenix-talk
-* Source: https://github.com/phoenixframework/phoenix

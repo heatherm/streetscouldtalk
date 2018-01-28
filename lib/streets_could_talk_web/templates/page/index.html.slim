@@ -1,33 +1,9 @@
 .jumbotron
   h2
-    =gettext "Welcome to %{name}", name: "your Razor Phoenix app!"
+    =gettext "Welcome to %{name}", name: "Hidden Stories"
   p.lead
-    |A productive web framework that<br />does not compromise speed and maintainability.
+    | ... If these streets could talk!
 
+h3 We built this site for you to be able to share the stories behind your built world.
+/ = render StreetsCouldTalkWeb.SharedView, "_bootstrap_modal_demo.html"
 hr
-#js-demo Uh oh, this text should have been replaced by streets_could_talk.js.
-hr
-= render StreetsCouldTalkWeb.SharedView, "_bootstrap_modal_demo.html"
-hr
-
-.row.marketing
-  .col-lg-6
-    h4
-      |Resources
-    ul
-      li
-        =link "Guides", to: "http://phoenixframework.org/docs/overview"
-      li
-        =link "Docs", to: "https://hexdocs.pm/phoenix"
-      li
-        =link "Source", to: "https://github.com/phoenixframework/phoenix"
-  .col-lg-6
-    h4
-      |Help
-    ul
-      li
-        =link "Mailing List", to: "http://groups.google.com/group/phoenix-talk"
-      li
-        =link "#elixir-lang on freenode IRC", to: "http://webchat.freenode.net/?channels=elixir-lang"
-      li
-        =link "@elixirphoenix", to: "https://twitter.com/elixirphoenix"
